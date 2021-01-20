@@ -1,0 +1,9 @@
+compile provides elf file 
+
+
+
+"-specs=rdimon.specs -lc -lrdimon"    vs  "-specs=nano.specs -lc -lnosys -lc"
+
+aarch64-elf/libc/usr/lib/crt0.o (libc is part of toolchain)
+crt0.o (C Run-Time zero) --> references the symbols `_start',`initialise_monitor_handles',`_exit' which are external
+
