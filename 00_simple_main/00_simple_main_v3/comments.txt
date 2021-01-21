@@ -1,0 +1,97 @@
+Nosys is for retarget.
+rdimon is for semihosting.
+
+
+-specs=rdimon.specs 
+-lc -lrdimon
+
+
+
+##################################################################################
+aarch64-elf-gcc --verbose  -march=armv8-a+crc -mcpu=cortex-a53  -specs=rdimon.specs -lc -lrdimon main.c -o main.elf
+
+Using built-in specs.
+Reading specs from /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../aarch64-elf/libc/usr/lib/rdimon.specs
+rename spec lib to libc
+
+COLLECT_GCC=aarch64-elf-gcc
+
+COLLECT_LTO_WRAPPER=/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../libexec/gcc/aarch64-elf/7.5.0/lto-wrapper
+
+Target: aarch64-elf
+
+Configured with: '/home/tcwg-buildslave/workspace/tcwg-make-release_1/snapshots/gcc.git~linaro-7.5-2019.12/configure' SHELL=/bin/bash --with-mpc=/home/tcwg-buildslave/workspace/tcwg-make-release_1/_build/builds/destdir/x86_64-unknown-linux-gnu --with-mpfr=/home/tcwg-buildslave/workspace/tcwg-make-release_1/_build/builds/destdir/x86_64-unknown-linux-gnu --with-gmp=/home/tcwg-buildslave/workspace/tcwg-make-release_1/_build/builds/destdir/x86_64-unknown-linux-gnu --with-gnu-as --with-gnu-ld --disable-libmudflap --enable-lto --enable-shared --without-included-gettext --enable-nls --with-system-zlib --disable-sjlj-exceptions --enable-gnu-unique-object --enable-linker-build-id --disable-libstdcxx-pch --enable-c99 --enable-clocale=gnu --enable-libstdcxx-debug --enable-long-long --with-cloog=no --with-ppl=no --with-isl=no --enable-multilib --enable-fix-cortex-a53-835769 --enable-fix-cortex-a53-843419 --with-arch=armv8-a --enable-threads=no --disable-multiarch --with-newlib --with-build-sysroot=/home/tcwg-buildslave/workspace/tcwg-make-release_1/_build/sysroots/aarch64-elf --with-sysroot=/home/tcwg-buildslave/workspace/tcwg-make-release_1/_build/builds/destdir/x86_64-unknown-linux-gnu/aarch64-elf/libc --enable-checking=release --disable-bootstrap --enable-languages=c,c++,lto --build=x86_64-unknown-linux-gnu --host=x86_64-unknown-linux-gnu --target=aarch64-elf --prefix=/home/tcwg-buildslave/workspace/tcwg-make-release_1/_build/builds/destdir/x86_64-unknown-linux-gnu
+
+Thread model: single
+
+gcc version 7.5.0 (Linaro GCC 7.5-2019.12) 
+
+COLLECT_GCC_OPTIONS='-v' '-march=armv8-a+crc' '-mcpu=cortex-a53' '-specs=rdimon.specs' '-o' 'main.elf' '-mlittle-endian' '-mabi=lp64'
+
+ /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../libexec/gcc/aarch64-elf/7.5.0/cc1 -quiet -v -iprefix /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/ -isysroot /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../aarch64-elf/libc main.c -quiet -dumpbase main.c -march=armv8-a+crc -mcpu=cortex-a53 -mlittle-endian -mabi=lp64 -auxbase main -version -o /tmp/ccPuIWDp.s
+
+
+GNU C11 (Linaro GCC 7.5-2019.12) version 7.5.0 (aarch64-elf)
+	compiled by GNU C version 4.8.4, GMP version 6.1.2, MPFR version 3.1.5, MPC version 1.0.3, isl version none
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+
+ignoring duplicate directory "/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/../../lib/gcc/aarch64-elf/7.5.0/include"
+ignoring nonexistent directory "/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../aarch64-elf/libc/usr/local/include"
+ignoring duplicate directory "/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/../../lib/gcc/aarch64-elf/7.5.0/include-fixed"
+ignoring duplicate directory "/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/../../lib/gcc/aarch64-elf/7.5.0/../../../../aarch64-elf/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/include
+ /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/include-fixed
+ /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/../../../../aarch64-elf/include
+ /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../aarch64-elf/libc/usr/include
+End of search list.
+
+GNU C11 (Linaro GCC 7.5-2019.12) version 7.5.0 (aarch64-elf)
+	compiled by GNU C version 4.8.4, GMP version 6.1.2, MPFR version 3.1.5, MPC version 1.0.3, isl version none
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+
+Compiler executable checksum: e103f8fc478a9c99c0382ec2493efc53
+
+COLLECT_GCC_OPTIONS='-v' '-march=armv8-a+crc' '-mcpu=cortex-a53' '-specs=rdimon.specs' '-o' 'main.elf' '-mlittle-endian' '-mabi=lp64'
+
+ /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/../../../../aarch64-elf/bin/as -v -EL -march=armv8-a+crc -march=armv8-a+crc -mabi=lp64 -o /tmp/ccVsDAFr.o /tmp/ccPuIWDp.s
+
+GNU assembler version 2.28.2 (aarch64-elf) using BFD version (Linaro_Binutils-2019.12) 2.28.2.20170706
+
+COMPILER_PATH=/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../libexec/gcc/aarch64-elf/7.5.0/:/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../libexec/gcc/:/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/../../../../aarch64-elf/bin/
+
+LIBRARY_PATH=/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/:/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/:/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/../../../../aarch64-elf/lib/:/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../aarch64-elf/libc/usr/lib/
+
+COLLECT_GCC_OPTIONS='-v' '-march=armv8-a+crc' '-mcpu=cortex-a53' '-specs=rdimon.specs' '-o' 'main.elf' '-mlittle-endian' '-mabi=lp64'
+
+ /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../libexec/gcc/aarch64-elf/7.5.0/collect2 -plugin /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../libexec/gcc/aarch64-elf/7.5.0/liblto_plugin.so -plugin-opt=/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../libexec/gcc/aarch64-elf/7.5.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7YFJSt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lrdimon -plugin-opt=-pass-through=-lgcc --sysroot=/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../aarch64-elf/libc --build-id -EL -X -maarch64elf --fix-cortex-a53-835769 --fix-cortex-a53-843419 -o main.elf /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/crti.o /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/crtbegin.o /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../aarch64-elf/libc/usr/lib/crt0.o -L/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0 -L/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc -L/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/../../../../aarch64-elf/lib -L/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../aarch64-elf/libc/usr/lib -lc -lrdimon /tmp/ccVsDAFr.o -lgcc --start-group -lc -lrdimon --end-group -lgcc /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/crtend.o /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/bin/../lib/gcc/aarch64-elf/7.5.0/crtn.o
+
+COLLECT_GCC_OPTIONS='-v' '-march=armv8-a+crc' '-mcpu=cortex-a53' '-specs=rdimon.specs' '-o' 'main.elf' '-mlittle-endian' '-mabi=lp64'
+
+#############################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+compile provides elf file 
+
+
+
+"-specs=rdimon.specs -lc -lrdimon"    vs  "-specs=nano.specs -lc -lnosys -lc"
+
+aarch64-elf/libc/usr/lib/crt0.o (libc is part of toolchain)
+crt0.o (C Run-Time zero) --> references the symbols `_start',`initialise_monitor_handles',`_exit' which are external
+
