@@ -1,0 +1,3 @@
+stop after compilation stage generate object file : relocatable elf
+
+hello_world.o: ELF 64-bit LSB relocatable,

@@ -1,0 +1,11 @@
+if you are are implementing your own OS kernel and don't want to rely on the C library
+ provided by your compiler environment, you are in a so-called "freestanding" environment. 
+ Special rules apply here, and in particular you'd have to convince your compiler to place itself in that mood. 
+ How to do that is different from compiler to compiler, gcc has -ffreestanding
+
+
+
+
+stop after compilation stage generate object file : relocatable elf
+
+hello_world.o: ELF 64-bit LSB relocatable,
