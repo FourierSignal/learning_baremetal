@@ -1,10 +1,10 @@
 
 
-
-HOME_DIR =  /home/jaguar
-
-PROJ_DIR = $(HOME_DIR)/Jaguar_workspace/Embedded/RSP3_revB/baremetal/learning_baremetal/03_initialize_without_gcc_crt0_v1
-
+HOME_DIR = /run/media/jaguar/f1e5af1f-3724-43aa-9a96-e6a60088e8b8/jaguar
+#HOME_DIR = /home/jaguar
+RELATIVE_PATH = $(HOME_DIR)/Jaguar_workspace/Embedded/RSP3_revB/baremetal/learning_baremetal
+PROJ_DIR = $(RELATIVE_PATH)/03_initialize_without_gcc_crt0_v2
+CARD_DIR = $(PROJ_DIR)/card
 
 
 SRC_DIR = src
@@ -12,16 +12,18 @@ BUILD_DIR = build
 OBJ_DIR = build/obj
 BINARIES = bin
 
+CROSS = aarch64-elf
 
 
-
-
+# -nostartfiles: Do not use the standard system startup files when linking
+# -march=arch{+[no]feature}*  ==> 
 build: clean create_build_dir
-	aarch64-elf-gcc  -c  -nostdlib -march=armv8-a+crc -mcpu=cortex-a53 $(SRC_DIR)/hello_world.c -o $(OBJ_DIR)/hello_world.o
-	aarch64-elf-gcc  -c  -nostdlib -march=armv8-a+crc -mcpu=cortex-a53 $(SRC_DIR)/uart.c -o  $(OBJ_DIR)/uart.o
-	aarch64-elf-as    -march=armv8-a+crc -mcpu=cortex-a53  $(SRC_DIR)/startup.S -o $(OBJ_DIR)/startup.o
-	aarch64-elf-ld  -T hello_world.ld  $(OBJ_DIR)/hello_world.o $(OBJ_DIR)/uart.o $(OBJ_DIR)/startup.o -o $(OBJ_DIR)/hello_world.elf 
-	aarch64-elf-objcopy -O binary $(OBJ_DIR)/hello_world.elf  $(BINARIES)/hello_world.bin
+	$(CROSS)-gcc  -c  -nostdlib -march=armv8-a+crc -mcpu=cortex-a53 $(SRC_DIR)/hello_world.c -o $(OBJ_DIR)/hello_world.o
+	$(CROSS)-gcc  -c  -nostdlib -march=armv8-a+crc -mcpu=cortex-a53 $(SRC_DIR)/uart.c -o  $(OBJ_DIR)/uart.o
+	$(CROSS)-as    -march=armv8-a+crc -mcpu=cortex-a53  $(SRC_DIR)/startup.S -o $(OBJ_DIR)/startup.o
+	$(CROSS)-ld  --verbose -T hello_world.ld  $(OBJ_DIR)/hello_world.o $(OBJ_DIR)/uart.o $(OBJ_DIR)/startup.o -o $(OBJ_DIR)/hello_world.elf 
+	$(CROSS)-objcopy -O binary $(OBJ_DIR)/hello_world.elf  $(BINARIES)/hello_world.bin
+
 
 
 create_build_dir: 
@@ -34,6 +36,9 @@ create_build_dir:
 clean:
 	rm -rf $(BUILD_DIR)
 	rm -rf $(BINARIES)	
+	rm -f $(CARD_DIR)/hello_world.bin
+	rm -f $(CARD_DIR)/card.Rpi3.RevB.baremetal.img
+
 
 say_hello: set_path
 	@echo "make clean start_build  flash_SDcard"
@@ -45,10 +50,19 @@ set_path:
 	@echo " execute command : source setenv.sh"
 	@echo ""
 	
+debug_files:
+	aarch64-elf-objdump  -D $(OBJ_DIR)/hello_world.elf   >  $(OBJ_DIR)/hello_world.disassemble
+	aarch64-elf-objdump  -S $(OBJ_DIR)/hello_world.elf   >  $(OBJ_DIR)/hello_world.mixedassembly
+	aarch64-elf-objdump  -t $(OBJ_DIR)/hello_world.elf   >  $(OBJ_DIR)/hello_world.symboltable
+	aarch64-elf-objdump  -T $(OBJ_DIR)/hello_world.elf   >  $(OBJ_DIR)/hello_world.DynamicSymbols
+	aarch64-elf-objdump  -r $(OBJ_DIR)/hello_world.elf   >  $(OBJ_DIR)/hello_world.relocEntries
+	aarch64-elf-objdump  -R $(OBJ_DIR)/hello_world.elf   >  $(OBJ_DIR)/hello_world.DynrelocEntries
 
 	
-flash_SDcard:
+copySDcard_files:
+	cp $(BINARIES)/hello_world.bin  $(CARD_DIR)/
 	
+flash_SDcard:
 	#@shell_output := $(shell "$(PROJ_DIR)/card/create_card.sh" hello_world.bin )
 
 	
