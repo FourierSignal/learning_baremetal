@@ -1,0 +1,100 @@
+mi/mi-console.o: ../../binutils-gdb/gdb/mi/mi-console.c \
+ ../../binutils-gdb/gdb/defs.h \
+ ../../binutils-gdb/gdb/../gdbsupport/common-defs.h \
+ ../gdbsupport/config.h ../gnulib/config.h ../gnulib/import/stdio.h \
+ ../gnulib/import/stdlib.h ../gnulib/import/string.h \
+ ../../binutils-gdb/gdb/../include/ansidecl.h \
+ ../../binutils-gdb/gdb/../include/libiberty.h \
+ ../../binutils-gdb/gdb/../include/ansidecl.h \
+ ../../binutils-gdb/gdb/../gnulib/import/pathmax.h \
+ ../gnulib/import/unistd.h ../gnulib/import/limits.h \
+ ../../binutils-gdb/gdb/../include/gdb/signals.h \
+ ../../binutils-gdb/gdb/../include/gdb/signals.def \
+ ../../binutils-gdb/gdb/../gdbsupport/gdb_locale.h \
+ ../gnulib/import/locale.h ../../binutils-gdb/gdb/../gdbsupport/ptid.h \
+ ../../binutils-gdb/gdb/../gdbsupport/common-types.h \
+ ../gnulib/import/inttypes.h \
+ ../../binutils-gdb/gdb/../gdbsupport/common-utils.h \
+ ../../binutils-gdb/gdb/../gdbsupport/poison.h \
+ ../../binutils-gdb/gdb/../gdbsupport/traits.h \
+ ../../binutils-gdb/gdb/../include/obstack.h \
+ ../../binutils-gdb/gdb/../gdbsupport/gdb_string_view.h \
+ ../../binutils-gdb/gdb/../gdbsupport/gdb_assert.h \
+ ../../binutils-gdb/gdb/../gdbsupport/errors.h \
+ ../../binutils-gdb/gdb/../gdbsupport/gdb_string_view.tcc \
+ ../../binutils-gdb/gdb/../gdbsupport/print-utils.h \
+ ../../binutils-gdb/gdb/../gdbsupport/common-debug.h \
+ ../../binutils-gdb/gdb/../gdbsupport/cleanups.h \
+ ../../binutils-gdb/gdb/../gdbsupport/common-exceptions.h \
+ ../../binutils-gdb/gdb/../gdbsupport/poison.h \
+ ../../binutils-gdb/gdb/../gdbsupport/gdb_unique_ptr.h config.h \
+ ../bfd/bfd.h ../../binutils-gdb/gdb/../include/symcat.h \
+ ../bfd/bfd_stdint.h ../../binutils-gdb/gdb/../include/diagnostics.h \
+ ../gnulib/import/sys/stat.h ../gnulib/import/fcntl.h \
+ ../../binutils-gdb/gdb/gdb_wchar.h ../gnulib/import/wctype.h \
+ ../../binutils-gdb/gdb/ui-file.h ../../binutils-gdb/gdb/ui-style.h \
+ ../../binutils-gdb/gdb/../gdbsupport/host-defs.h \
+ ../../binutils-gdb/gdb/../gdbsupport/enum-flags.h \
+ ../../binutils-gdb/gdb/../include/hashtab.h nm.h \
+ ../../binutils-gdb/gdb/../include/fopen-bin.h \
+ ../../binutils-gdb/gdb/utils.h ../../binutils-gdb/gdb/exceptions.h \
+ ../../binutils-gdb/gdb/ui-out.h \
+ ../../binutils-gdb/gdb/../gdbsupport/array-view.h \
+ ../../binutils-gdb/gdb/../gdbsupport/scoped_restore.h \
+ ../../binutils-gdb/gdb/mi/mi-console.h
+../../binutils-gdb/gdb/defs.h:
+../../binutils-gdb/gdb/../gdbsupport/common-defs.h:
+../gdbsupport/config.h:
+../gnulib/config.h:
+../gnulib/import/stdio.h:
+../gnulib/import/stdlib.h:
+../gnulib/import/string.h:
+../../binutils-gdb/gdb/../include/ansidecl.h:
+../../binutils-gdb/gdb/../include/libiberty.h:
+../../binutils-gdb/gdb/../include/ansidecl.h:
+../../binutils-gdb/gdb/../gnulib/import/pathmax.h:
+../gnulib/import/unistd.h:
+../gnulib/import/limits.h:
+../../binutils-gdb/gdb/../include/gdb/signals.h:
+../../binutils-gdb/gdb/../include/gdb/signals.def:
+../../binutils-gdb/gdb/../gdbsupport/gdb_locale.h:
+../gnulib/import/locale.h:
+../../binutils-gdb/gdb/../gdbsupport/ptid.h:
+../../binutils-gdb/gdb/../gdbsupport/common-types.h:
+../gnulib/import/inttypes.h:
+../../binutils-gdb/gdb/../gdbsupport/common-utils.h:
+../../binutils-gdb/gdb/../gdbsupport/poison.h:
+../../binutils-gdb/gdb/../gdbsupport/traits.h:
+../../binutils-gdb/gdb/../include/obstack.h:
+../../binutils-gdb/gdb/../gdbsupport/gdb_string_view.h:
+../../binutils-gdb/gdb/../gdbsupport/gdb_assert.h:
+../../binutils-gdb/gdb/../gdbsupport/errors.h:
+../../binutils-gdb/gdb/../gdbsupport/gdb_string_view.tcc:
+../../binutils-gdb/gdb/../gdbsupport/print-utils.h:
+../../binutils-gdb/gdb/../gdbsupport/common-debug.h:
+../../binutils-gdb/gdb/../gdbsupport/cleanups.h:
+../../binutils-gdb/gdb/../gdbsupport/common-exceptions.h:
+../../binutils-gdb/gdb/../gdbsupport/poison.h:
+../../binutils-gdb/gdb/../gdbsupport/gdb_unique_ptr.h:
+config.h:
+../bfd/bfd.h:
+../../binutils-gdb/gdb/../include/symcat.h:
+../bfd/bfd_stdint.h:
+../../binutils-gdb/gdb/../include/diagnostics.h:
+../gnulib/import/sys/stat.h:
+../gnulib/import/fcntl.h:
+../../binutils-gdb/gdb/gdb_wchar.h:
+../gnulib/import/wctype.h:
+../../binutils-gdb/gdb/ui-file.h:
+../../binutils-gdb/gdb/ui-style.h:
+../../binutils-gdb/gdb/../gdbsupport/host-defs.h:
+../../binutils-gdb/gdb/../gdbsupport/enum-flags.h:
+../../binutils-gdb/gdb/../include/hashtab.h:
+nm.h:
+../../binutils-gdb/gdb/../include/fopen-bin.h:
+../../binutils-gdb/gdb/utils.h:
+../../binutils-gdb/gdb/exceptions.h:
+../../binutils-gdb/gdb/ui-out.h:
+../../binutils-gdb/gdb/../gdbsupport/array-view.h:
+../../binutils-gdb/gdb/../gdbsupport/scoped_restore.h:
+../../binutils-gdb/gdb/mi/mi-console.h:

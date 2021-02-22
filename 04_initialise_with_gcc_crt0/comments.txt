@@ -1,0 +1,30 @@
+stop after compilation stage generate object file : relocatable elf
+
+hello_world.o: ELF 64-bit LSB relocatable,
+
+aarch64-elf/libc/usr/lib/crt0.o 
+
+
+
+/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf/aarch64-elf/libc/usr/lib/crt0.o
+
+
+
+aarch64-elf-gcc  -c -g  -march=armv8-a+crc -mcpu=cortex-a53 hello_world.c
+cp /home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/toolchains/Linaro/baremetal_toolchain/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-elf//aarch64-elf/libc/usr/lib/crt0.o  .
+
+aarch64-elf-ld -o  hello_world.elf hello_world.o crt0.o 
+hello_world.o: In function `main':
+/home/jaguar/Jaguar_workspace/Embedded/RSP3_revB/baremetal/learning_baremetal/04_initialise_with_gcc_crt0/hello_world.c:3: undefined reference to `printf'
+crt0.o: In function `_start':
+/home/tcwg-buildslave/workspace/tcwg-make-release_1/snapshots/newlib.git~linaro-local~linaro-newlib-2_5_0/libgloss/aarch64/crt0.S:145: undefined reference to `memset'
+/home/tcwg-buildslave/workspace/tcwg-make-release_1/snapshots/newlib.git~linaro-local~linaro-newlib-2_5_0/libgloss/aarch64/crt0.S:148: undefined reference to `initialise_monitor_handles'
+/home/tcwg-buildslave/workspace/tcwg-make-release_1/snapshots/newlib.git~linaro-local~linaro-newlib-2_5_0/libgloss/aarch64/crt0.S:154: undefined reference to `atexit'
+/home/tcwg-buildslave/workspace/tcwg-make-release_1/snapshots/newlib.git~linaro-local~linaro-newlib-2_5_0/libgloss/aarch64/crt0.S:156: undefined reference to `__libc_init_array'
+/home/tcwg-buildslave/workspace/tcwg-make-release_1/snapshots/newlib.git~linaro-local~linaro-newlib-2_5_0/libgloss/aarch64/crt0.S:221: undefined reference to `exit'
+crt0.o: In function `_cpu_init_hook':
+/home/tcwg-buildslave/workspace/tcwg-make-release_1/snapshots/newlib.git~linaro-local~linaro-newlib-2_5_0/libgloss/aarch64/crt0.S:228: undefined reference to `__libc_fini_array'
+make: *** [Makefile:20: start_build] Error 1
+
+
+
