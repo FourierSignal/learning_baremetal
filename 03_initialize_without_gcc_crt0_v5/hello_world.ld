@@ -18,12 +18,15 @@ SECTIONS
 
     .bss :
     {
+    . = ALIGN(16);
 
-    __bss_start = ALIGN(0x10);
+    __bss_start = . ;
 
     *(.bss)
 
-    __bss_end = ALIGN(0x10);
+    . = ALIGN(16);
+    
+    __bss_end = . ;
 
 
     }

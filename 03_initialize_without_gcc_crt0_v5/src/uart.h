@@ -13,10 +13,12 @@
 #define GPPUD   (*(volatile unsigned *)(GP_BASE + 0x94))
 #define GPPUDCLK0   (*(volatile unsigned *)(GP_BASE + 0x98))
 
-extern void init_uart (void);
 
-extern void raw_putc (char c);
 
-extern void uart_putc (char c);
+void init_uart (void);
 
-extern void uart_puts (const char *s);
+void raw_putc (char c);
+
+void uart_putc (char c);
+
+void uart_puts (const char *s);

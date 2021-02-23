@@ -1,8 +1,7 @@
 
-
-HOME_DIR = /home/jaguar/Mount_dir/jaguar
-#HOME_DIR = /home/jaguar
-RELATIVE_PATH = $(HOME_DIR)/Jaguar_workspace/Embedded/RSP3_revB/baremetal/learning_baremetal
+#HOME_DIR = /home/jaguar/Mount_dir/jaguar
+HOME_DIR = /home/jaguar
+RELATIVE_PATH = $(HOME_DIR)/Documents/learning_baremetal
 PROJ_DIR = $(RELATIVE_PATH)/03_initialize_without_gcc_crt0_v5
 CARD_DIR = $(PROJ_DIR)/card
 
@@ -15,7 +14,7 @@ BINARIES = bin
 
 
 CROSS = aarch64-elf
-CFLAGS  = -g -Wall -O2 -ffreestanding
+CFLAGS  = -g -Wall -O2 -ffreestanding  -D RPI3 -D IOBPLUS --verbose
 LDFLAGS = -nostdlib -T hello_world.ld --verbose 
 
 # -nostartfiles: Do not use the standard system startup files when linking
@@ -24,8 +23,11 @@ build: clean create_build_dir
 	$(CROSS)-gcc $(CFLAGS) -c  -nostdlib -march=armv8-a+crc -mcpu=cortex-a53 $(SRC_DIR)/hello_world.c -o $(OBJ_DIR)/hello_world.o
 	$(CROSS)-gcc $(CFLAGS) -c  -nostdlib -march=armv8-a+crc -mcpu=cortex-a53 $(SRC_DIR)/uart.c -o  $(OBJ_DIR)/uart.o
 	$(CROSS)-gcc $(CFLAGS) -c  -nostdlib -march=armv8-a+crc -mcpu=cortex-a53 $(SRC_DIR)/cstartup.c -o  $(OBJ_DIR)/cstartup.o
+	
+	$(CROSS)-gcc $(CFLAGS) -c  -nostdlib -march=armv8-a+crc -mcpu=cortex-a53 $(SRC_DIR)/gpio.c -o  $(OBJ_DIR)/gpio.o
+		
 	$(CROSS)-as    -march=armv8-a+crc -mcpu=cortex-a53  $(SRC_DIR)/startup.S -o $(OBJ_DIR)/startup.o
-	$(CROSS)-ld  $(LDFLAGS)  $(OBJ_DIR)/hello_world.o $(OBJ_DIR)/uart.o $(OBJ_DIR)/cstartup.o $(OBJ_DIR)/startup.o -o $(OBJ_DIR)/hello_world.elf 
+	$(CROSS)-ld  $(LDFLAGS)  $(OBJ_DIR)/hello_world.o $(OBJ_DIR)/uart.o $(OBJ_DIR)/gpio.o  $(OBJ_DIR)/cstartup.o $(OBJ_DIR)/startup.o -o $(OBJ_DIR)/hello_world.elf 
 	$(CROSS)-objcopy -O binary $(OBJ_DIR)/hello_world.elf  $(BINARIES)/hello_world.bin
 
 
